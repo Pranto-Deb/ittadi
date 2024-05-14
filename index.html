@@ -1,0 +1,1291 @@
+<!doctype html>
+<html lang="bn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>অনলাইনে বাজার সদায়</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="fvp6h9MJIaKCBipGk4IcxbaCVzw43MT3wpT6bojj">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://itthadi.com/assets/css/bootstrap.min.css">
+    <!-- font awesome kit ---------for my website  ---->
+    <script src="https://kit.fontawesome.com/a5a1a3e089.js" crossorigin="anonymous"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="https://itthadi.com/assets/css/frontendCustom.css"> 
+    <!-- Livewire Styles --><style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}[x-cloak] {display: none;}</style> 
+    <style>
+        header.header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: white; /* Or any other background color */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Add a shadow for better visibility */
+        }
+    </style>
+  </head>
+<body>
+    <div id="app"> 
+        <!-- header -->
+        <header class="header w-100">
+            <!-- navbar -->
+            <nav>
+              <div class="container-fluid navbar bg-dark navbar-dark navbar-expand justify-content-between">
+                  <div class="d-flex ms-2">
+                    <button id="manu_btn" class="btn" type="button">
+                      <i class="fas fa-bars text-secondary"></i>
+                    </button>
+                    <a href="https://itthadi.com" class="navbar-brand home-logo ms-2"></a>
+                  </div>
+                  <form action="https://itthadi.com/search"  method="GET" class="d-flex w-50 search"> 
+                    <input name="query" type="text" value="" placeholder="পণ্য খুঁজুন (যেমন- ডিম, আলু, দুধ... )" class="form-control">
+                    <button type="submit" class="btn btn-success search_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                  </form>
+                  <ul class="navbar-nav header-nav">
+                    <li class="nav-item nav-link"><div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;W26jpq2LhbM5ygD7excO&quot;,&quot;name&quot;:&quot;frontend.include.language-button&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;bn&quot;},&quot;checksum&quot;:&quot;720569e95ebfaef87f2a43dac2b26f78de821f300e655957f1600e1497546cfc&quot;}" wire:effects="[]" wire:id="W26jpq2LhbM5ygD7excO" wire:ignore.self>
+              <span wire:click="bangla_lang" class="badge text-bg-danger" role="button">বাং</span> | <span wire:click="english_lang" class="badge text-bg-dark" role="button">Eng</span>
+          </div>
+          </li>  
+                    <li class="nav-item"><a href="#question" class="nav-link">প্রশ্ন</a></li> 
+                    <li class="nav-item"><a href="#" class="nav-link">যোগাযোগ</a></li>
+                    <li class="nav-item">
+                                    <a href="https://itthadi.com/register" class="btn btn-success me-2">সাইন ইন</a>
+                    </li>
+                  </ul>
+                  <span class="mobile_dot btn me-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                    </svg>
+                  </span>
+              </div>
+            </nav>
+            <!-- navbar -->  
+          </header>
+          <!-- header --> 
+<!-- header --> 
+<!-- mobile footer --> 
+<!-- see card  -->
+ <div wire:snapshot="{&quot;data&quot;:{&quot;basket_items&quot;:0,&quot;basket_total&quot;:0},&quot;memo&quot;:{&quot;id&quot;:&quot;sO8BWppsik4nJBVlD6jZ&quot;,&quot;name&quot;:&quot;frontend.include.basket-button&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;bn&quot;},&quot;checksum&quot;:&quot;ea4570738dbf01de39a67fc89c706b02f87d30768c9a8fcc986aacbe81cb7c47&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;updateTotal&quot;,&quot;updateBasket&quot;]}" wire:id="sO8BWppsik4nJBVlD6jZ">
+  <div class="mobile_footer">
+    <div class="d-flex h-100">
+        <div class="flex-item pt-3 text-center bg-white h-100 mobile_home">
+          <a href="https://itthadi.com" class="text-decoration-none text-black"><i class="fa-solid fa-house fs-1"></i></a>
+        </div> 
+        <div class="flex-item pt-2 text-center text-white bg-danger h-100 mobile_bag">
+          <span class="fs-2"> 
+                            <a class="nav-link" href="https://itthadi.com">অর্ডার করুন</a>
+             <!-- __ENDBLOCK__ -->  
+          </span>
+        </div> 
+        <div class="flex-item text-center bg-white h-100 mobile_action">
+          <button type="button" class="btn flex-item text-center bg-white h-100 mobile_action" data-bs-toggle="modal" data-bs-target="#cardModal">
+            <i class="fa-solid fa-bag-shopping fs-1"></i> 
+            <span class="position-absolute   translate-middle item_position badge rounded-pill bg-danger">0</span>
+          </button>
+        </div> 
+    </div>
+  </div>
+
+    <div class="card_position shadow-sm"type="button" data-bs-toggle="modal" data-bs-target="#cardModal">
+        <div class="h-100 rounded text-center fw-bold">
+          <div class="item1 bg-secondary text-success p-1">
+            <i class="fa-solid fa-bag-shopping fs-3"></i><br>
+                        <small>0 টি</small>
+             <!-- __ENDBLOCK__ -->
+          </div>
+          <div  class="item2 bg-white"><span id="clone_total"> ৳0</span></div>
+        </div>
+      </div>
+</div>
+<!-- mobile footer -->
+  <!-- Modal -->
+   <div wire:snapshot="{&quot;data&quot;:{&quot;basket_items&quot;:0,&quot;basket&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;basket_products&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;total&quot;:&quot;0.00&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;XvLX8QmDAshsmXjBgSux&quot;,&quot;name&quot;:&quot;frontend.include.list-product-model&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;bn&quot;},&quot;checksum&quot;:&quot;014630b6dac3d8c220225d2ce9d6041507e0c4e7ba73df90ff305b1239d2145e&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;updateBasket&quot;],&quot;dispatches&quot;:[{&quot;name&quot;:&quot;updateTotal&quot;,&quot;params&quot;:{&quot;total&quot;:&quot;0.00&quot;}}]}" wire:id="XvLX8QmDAshsmXjBgSux" class="">
+    <div wire:ignore.self class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content card_model">
+            <div class="modal-header"data-bs-dismiss="modal" aria-label="Close">
+              <h5 class="modal-title" id="exampleModalLabel"> 
+                    <i class="fa-solid fa-bag-shopping fs-3 text-success"></i> 0 items 
+              </h5>
+              <button type="button" class="btn-close"></button>
+            </div>
+            <div class="modal-body">
+                
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="shopping-cart"> 
+                                <!-- __BLOCK__ -->                                    <div class="my-3 text-center">
+                                        <img class="img-fluid w-50" src="https://itthadi.com/uploads/frontendasset/empty_beg.jpeg" alt="No Products In Basket">
+                                        <h4>শফিং ব্যাগ এখনো খালি !</h4>
+                                    </div>
+                                 <!-- __ENDBLOCK__ --> 
+                                 <!-- basket items --> 
+                                 <div class="cart-item bg-body-secondary">
+                                    <div class="row">
+                                         <div class="col-md-12">
+                                              
+                                            ডেলিভারি চার্জ 
+                                            <span class="fw-bold float-end">$ 40</span> 
+                                         </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>  
+                    </div> 
+               
+            </div>
+            <div class="modal-footer justify-content-end text-center">  
+                <button class="btn place_order_btn bg-danger text-white w-50">
+                                            <a class="nav-link" href="https://itthadi.com">পণ্য যোগ করুন</a>
+                     <!-- __ENDBLOCK__ -->  
+                </button>
+                <div class="btn total_amount bg-success text-white w-auto float-end">$ 0.00</div>   
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<!-- card model -->
+ <!-- phone dot -->
+    <!-- Modal -->
+    <div class="container-fluid content_section">
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button><br>
+              <div class="w-75 m-auto">
+                <ul class="nav flex-column mt-2 fw-bold">
+                                                      <li class="nav-item d-flex justify-content-between">
+                    <a href="https://itthadi.com/register"class="nav-link w-100 text-secondary">সাইন ইন</a>
+                    <span class=""><i class="fa-solid fa-right-to-bracket"></i></span>
+                  </li> 
+                   
+                  <li class="nav-item d-flex justify-content-between">
+                    <a href="#"class="nav-link w-100 text-secondary">যোগাযোগ</a>
+                    <span class=""><i class="fa-solid fa-address-card"></i></span>
+                  </li> 
+                  <li class="nav-item d-flex justify-content-between">
+                    <a href="#"class="nav-link w-100 text-secondary">সাহায্য</a>
+                    <span class=""><i class="fa-solid fa-question"></i></span>
+                  </li> 
+                  <li class="nav-item nav-link d-flex justify-content-around">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                        <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+                        <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+                      </svg>
+                    <div class="text-center w-75"><div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;RUx7HhGfSMgAFOQoVEhh&quot;,&quot;name&quot;:&quot;frontend.include.language-button&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;bn&quot;},&quot;checksum&quot;:&quot;6491b5330ece540af70b0b633ae574ffedb75bdf04df447ec1d2281e1b207a7a&quot;}" wire:effects="[]" wire:id="RUx7HhGfSMgAFOQoVEhh" wire:ignore.self>
+    <span wire:click="bangla_lang" class="badge text-bg-danger" role="button">বাং</span> | <span wire:click="english_lang" class="badge text-bg-dark" role="button">Eng</span>
+</div>
+</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <img src="https://itthadi.com/uploads/frontendasset/logo_y_b.png" alt="itthadi" class="img-fluid logo m-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+  <!-- phone dot  --> 
+        <div class="row vh-100 d-flex mt-5">
+            <!-- slidebar -->
+  
+  <div class="col-md-3 border-end border-5 vh-100 col-lg-2 z-1 slidebar" id="slidebar">
+    <div class="row justify-content-center mt-3"> 
+       <a href="https://itthadi.com/bazarlist" class="col-10 btn btn-primary "> 
+        বাজার মূল্য <i class="fa-solid fa-download"></i>
+      </a>  
+    </div>
+    <ul class="nav flex-column mt-2">  
+      <hr> 
+            <!-- dynamic category   -->
+            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;zpi6etwEdZvAUKzjsLjm&quot;,&quot;name&quot;:&quot;frontend.category&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;bn&quot;},&quot;checksum&quot;:&quot;ab7d8363bcfc70a1eda6b6fccb5e326404a2818b98c990e3134229c2d6d86bce&quot;}" wire:effects="[]" wire:id="zpi6etwEdZvAUKzjsLjm">
+    <!-- __BLOCK__ -->        <li class="nav-item d-flex justify-content-between align-items-center">
+            <a href="https://itthadi.com/c/grocery"class="nav-link text-black">
+            <img src="https://itthadi.com/uploads/category/1709449375.jpg" alt="icon" class="rounded-4 " width="35px" height="35px">
+            <span class="product-name">মুদিমালামাল</span>
+            </a>
+            <span class=""> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </span>
+        </li> 
+            <li class="nav-item d-flex justify-content-between align-items-center">
+            <a href="https://itthadi.com/c/vegetable"class="nav-link text-black">
+            <img src="https://itthadi.com/uploads/category/1709476656.png" alt="icon" class="rounded-4 " width="35px" height="35px">
+            <span class="product-name">টাটকা শাকসবজি</span>
+            </a>
+            <span class=""> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </span>
+        </li> 
+            <li class="nav-item d-flex justify-content-between align-items-center">
+            <a href="https://itthadi.com/c/fish&amp;meat"class="nav-link text-black">
+            <img src="https://itthadi.com/uploads/category/1709476815.png" alt="icon" class="rounded-4 " width="35px" height="35px">
+            <span class="product-name">মাছ এবং মাংস</span>
+            </a>
+            <span class=""> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </span>
+        </li> 
+            <li class="nav-item d-flex justify-content-between align-items-center">
+            <a href="https://itthadi.com/c/shutki"class="nav-link text-black">
+            <img src="https://itthadi.com/uploads/category/1709477020.jpeg" alt="icon" class="rounded-4 " width="35px" height="35px">
+            <span class="product-name">কক্সবাজারের শুটকী</span>
+            </a>
+            <span class=""> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </span>
+        </li> 
+     <!-- __ENDBLOCK__ --> 
+</div>
+  
+    </ul> 
+   </div>
+  
+<!-- slidebar -->            <div class="col-md-9 col-lg-10 offset-md-3 offset-lg-2 content_area" id="content_area">
+                <main>
+                        <!-- frist section start -->
+    <div class="container-fluid content_section">
+      <div class="d-flex flex-column align-items-center text-center search_box">
+        <p class="h1 fs-3 fs-md fw-bold">মুদি মালামাল 100 মিনিটে ডেলিভারি</p>
+        <form action="https://itthadi.com/search" method="GET" class="d-flex search"> 
+          <input name="query" type="text" placeholder="পণ্য খুঁজুন (যেমন- ডিম, আলু, দুধ... )" class="form-control">
+          <button type="submit" class="btn btn-success search_btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+          </button>
+        </form>
+      </div>
+   </div>
+  <!-- frist section end -->
+
+  <!-- promotion section start -->
+    <div class="container-fluid content_section">
+      <div class="d-lg-flex text-center">
+        <a href="#"><img src="https://itthadi.com/uploads/frontendasset/banner1.png" alt="banner" class="img-fluid p-0 pe-lg-2 mt-2 mt-md-3"></a>
+        <a href="#"><img src="https://itthadi.com/uploads/frontendasset/banner2.png" alt="banner" class="img-fluid p-0 ps-lg-2 mt-2 mt-md-3"></a> 
+      </div>
+    </div>
+  <!-- promotion section end -->
+
+  <!-- catagory section start -->
+    <div class="container-fluid content_section">
+        <div class="row flex-column flex-md-row">
+        <p class="h2 my-3 my-md-5 text-center">খুবই গুরুত্বপূর্ণ ক্যাটাগরিসমুহ</p>
+              
+                  <div class="col col-md-6 col-lg-4 mt-2 mt-md-3">
+                    <div class="card text-center">
+                        <a href="https://itthadi.com/c/grocery" class="text-decoration-none text-black">
+                          <img src="https://itthadi.com/uploads/category/banner/1709449375.jpg" class="card-img-top cat_img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-center">মুদিমালামাল</h5>
+                          </div>
+                       </a>
+                    </div>
+                  </div>  
+            
+                  <div class="col col-md-6 col-lg-4 mt-2 mt-md-3">
+                    <div class="card text-center">
+                        <a href="https://itthadi.com/c/vegetable" class="text-decoration-none text-black">
+                          <img src="https://itthadi.com/uploads/category/banner/1709476656.jpg" class="card-img-top cat_img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-center">টাটকা শাকসবজি</h5>
+                          </div>
+                       </a>
+                    </div>
+                  </div>  
+            
+                  <div class="col col-md-6 col-lg-4 mt-2 mt-md-3">
+                    <div class="card text-center">
+                        <a href="https://itthadi.com/c/fish&amp;meat" class="text-decoration-none text-black">
+                          <img src="https://itthadi.com/uploads/category/banner/1709476815.jpg" class="card-img-top cat_img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-center">মাছ এবং মাংস</h5>
+                          </div>
+                       </a>
+                    </div>
+                  </div>  
+            
+                  <div class="col col-md-6 col-lg-4 mt-2 mt-md-3">
+                    <div class="card text-center">
+                        <a href="https://itthadi.com/c/shutki" class="text-decoration-none text-black">
+                          <img src="https://itthadi.com/uploads/category/banner/1709477020.jpg" class="card-img-top cat_img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-center">কক্সবাজারের শুটকী</h5>
+                          </div>
+                       </a>
+                    </div>
+                  </div>  
+            
+        </div>
+    </div>
+  <!-- catagory section end -->
+
+  <!-- advertise banner start -->
+    <div class="container-fluid content_section">
+    <div class="row">
+        <div class="col-12">
+          <p class="h2 my-3 my-md-5 text-center">কিভাবে অর্ডার করব ?</p>
+
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="3000" data-bs-pause="hover">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner text-center">
+              <div class="carousel-item carousel_width active">
+                <img src="https://itthadi.com/uploads/frontendasset/banner3.jpg" class="img-fluid" alt="1st banner">
+              </div>
+              <div class="carousel-item carousel_width">
+                <img src="https://itthadi.com/uploads/frontendasset/banner4.jpg" class="img-fluid" alt="2nd banner">
+              </div>
+              <div class="carousel-item carousel_width">
+                <img src="https://itthadi.com/uploads/frontendasset/banner5.jpg" class="img-fluid" alt="3rd banner">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- advertise banner end -->
+
+  <!-- product slide start -->
+   <div class="container-fluid content_section">
+      <div class="row">
+          <p class="h2 my-3 my-md-5 text-center">আপনার জন্য বিশেষ অফার</p>
+          <!-- Swiper -->
+          <div wire:snapshot="{&quot;data&quot;:{&quot;qty&quot;:1,&quot;product_id&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;bbHWzMHrD0P0z0OKeKz3&quot;,&quot;name&quot;:&quot;frontend.product&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;bn&quot;},&quot;checksum&quot;:&quot;1261c2c9148d9b764ba94daf1ac6357772d4679eef4294274da72790a2aef2fa&quot;}" wire:effects="[]" wire:id="bbHWzMHrD0P0z0OKeKz3" wire:ignore> 
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- __BLOCK__ -->          <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/2">
+                        <img src="https://itthadi.com/uploads/product/17097127401.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">কাঁচা মরিচ</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৪৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৫০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(2)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/3">
+                        <img src="https://itthadi.com/uploads/product/17097132761.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">টমেটো (কাঁচা-লাল মিক্সড)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৩৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৪০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(3)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/4">
+                        <img src="https://itthadi.com/uploads/product/17097428301.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">দেশি রসুন</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳১৬০</strong>
+                        <small class="text-decoration-line-through text-secondary">৳১৭০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(4)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/5">
+                        <img src="https://itthadi.com/uploads/product/17097430381.png" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">রসুন ( ইমপোর্টেট)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳১৯০</strong>
+                        <small class="text-decoration-line-through text-secondary">৳২১০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(5)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/6">
+                        <img src="https://itthadi.com/uploads/product/17097434981.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">দেশি পেয়াজ (লোকাল)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳১০৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳১১০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(6)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/7">
+                        <img src="https://itthadi.com/uploads/product/17097811521.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">আদা (ইমপোর্টেট চাইনা )</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>২৫০</p>
+                            <p>গ্রাম</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৫৭</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৬০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(7)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/8">
+                        <img src="https://itthadi.com/uploads/product/17097814361.jpeg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">মুরগির ডিম লাল(লেয়ার)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১২</p>
+                            <p>টি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳১১৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳১২০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(8)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/9">
+                        <img src="https://itthadi.com/uploads/product/17097818391.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">আলু স্বাভাবিক (দেশি)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৬৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৭০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(9)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/10">
+                        <img src="https://itthadi.com/uploads/product/17097821611.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">লাল পিয়াজ আমদানিকৃত</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳১২৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳১৩০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(10)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/11">
+                        <img src="https://itthadi.com/uploads/product/17097825881.jpeg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">লাল আলু (কার্ডিনাল)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৪০</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৪৫</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(11)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/12">
+                        <img src="https://itthadi.com/uploads/product/17097830621.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">শুকনা মরিচ আমদানিকৃত</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>৫০০</p>
+                            <p>গ্রাম</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳২১০</strong>
+                        <small class="text-decoration-line-through text-secondary">৳২২০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(12)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/13">
+                        <img src="https://itthadi.com/uploads/product/17097833561.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">লইট্টা শুটকী (সমুদ্রের)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>৫০০</p>
+                            <p>গ্রাম</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৩৯৯</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৪২৫</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(13)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/14">
+                        <img src="https://itthadi.com/uploads/product/17097837891.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">দেশি আদা</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>২৫০</p>
+                            <p>গ্রাম</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৪৮</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৫০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(14)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/15">
+                        <img src="https://itthadi.com/uploads/product/17097843771.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">বেঙ্গল মিট হাড়সহ গরুর মাংশ(হাড় 250গ্রাম)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৭৫০</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৭৯৯</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(15)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/16">
+                        <img src="https://itthadi.com/uploads/product/17097877961.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">বয়লার মুরগি  চামড়াসহ</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳১৯৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳২১০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(16)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/17">
+                        <img src="https://itthadi.com/uploads/product/17097921771.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">তেলাপিয়া মাছ মাঝারি সাইজ(১৫০গ্রাম)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳২২০</strong>
+                        <small class="text-decoration-line-through text-secondary">৳২৩০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(17)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/18">
+                        <img src="https://itthadi.com/uploads/product/17097929371.png" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">পাঙ্গাস মাছ (জীবিত)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳২২০</strong>
+                        <small class="text-decoration-line-through text-secondary">৳২৩০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(18)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/19">
+                        <img src="https://itthadi.com/uploads/product/17097936681.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">সিডি শুটকী (সামুদ্রীক মাছ)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>৫০০</p>
+                            <p>গ্রাম</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳২৭৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৩০০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(19)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/20">
+                        <img src="https://itthadi.com/uploads/product/17097938691.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">ললিতা আলু বড় সাইজের</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৩৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৪০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(20)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/21">
+                        <img src="https://itthadi.com/uploads/product/17097943481.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">সবুজ গোল বেগুন</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৪০</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৪৫</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(21)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+                  <div class="swiper-slide">
+            <!-- card -->
+                <div class="card pro_card"> 
+                    <div class="card-body text-center">
+                        <a class="text-black text-decoration-none" href="https://itthadi.com/view/22">
+                        <img src="https://itthadi.com/uploads/product/17097949271.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-center title_area product-name">মিষ্টি কুমড়ো (সুইট পামকিন)</h5>
+                        <div class="card-text d-flex justify-content-center test">
+                            <p>১</p>
+                            <p>কেজি</p>
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center">
+                        <strong class="text-success">৳৩৫</strong>
+                        <small class="text-decoration-line-through text-secondary">৳৪০</small>
+                        </div>
+                        </a>
+                        <div class="w-100 my-3">
+                        <button wire:click="addToCard(22)" class="w-100 btn btn-secondary border-0 fw-bold text-white d-flex justify-content-around align-items-center pro_btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                            </svg>
+                            <span>যোগ করি</span>
+                        </button>
+                        </div>
+                    </div> 
+                  </div> 
+            <!-- card -->
+          </div> 
+         <!-- __ENDBLOCK__ -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>   
+
+    
+      
+        
+        
+ 
+     
+ 
+    
+
+ <!-- live wire component -->  <!-- ================================================================ -->
+      </div>
+   </div>
+  <!-- product slide end --> 
+
+  <!-- why people love start -->
+    <div class="container-fluid content_section">
+      <p class="h2 my-3 my-md-5 text-center">কেন মানুষ ইত্যাদিকে ভালোবাসে ? <i class="fa-solid fa-heart text-danger"></i></p>
+        <div class="row flex-column flex-md-row">
+
+          <div class="col col-lg-4">
+          <figure class="figure w-100 text-center">
+            <img src="https://itthadi.com/uploads/frontendasset/call.jpg" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption text-center">আপনি চাইলে কল এর মাধ্যমে অর্ডার সম্পন্ন করতে পারবেন। আপনি সকাল ৬:০০ মিনিট থেকে রাত ৯:০০ মিনিট পর্যন্ত যেকোন সময় অর্ডার দিতে সক্ষম থাকবেন। <br><strong>01872-040484</strong></figcaption>
+          </figure>
+          </div>
+          <div class="col col-lg-4">
+          <figure class="figure w-100 text-center">
+            <img src="https://itthadi.com/uploads/frontendasset/check.jpg" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">আপনার অর্ডার করা পণ্যসমুহের গুণাগুণ চেক করে অর্ডার গ্রহণ করতে পারবেন। আর হ্যা আপনার কোন পণ্যের গুণাগুণ ভালো না লাগলে আপনি পণ্যটি বাতিল করতে পাবেন।</figcaption>
+          </figure>
+          </div>
+          <div class="col col-lg-4">
+          <figure class="figure w-100 text-center">
+            <img src="https://itthadi.com/uploads/frontendasset/time.jpg" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">আমাদের কাছ থেকে সেবা গ্রহণ করার মাধ্যমে কাস্টমারদের মূল্যবান সময় সাশ্রয় হয়। ফলে তারা পরিবার এবং কাজে বেশি সময় ব্যয় করেতে পারে।</figcaption>
+          </figure>
+          </div>
+        
+      </div>
+    </div>
+  <!-- why people love end -->
+
+  <!-- corporate section start -->
+    <div class="container-fluid content_section text-center">
+      <div style="background: linear-gradient(to right, rgba(40, 40, 75, 0.5),rgba(28, 78, 59, 0.5));">
+      <p class="h3 pt-5 text-center text-white fw-bold">আপনার কি কোন ব্যবসা আছে</p>
+      <p class="h5 py-2 text-center text-warning">আমাদের সাথে উদ্ধোক্তা হয়ে যান</p>
+        <div class="row flex-column flex-md-row justify-content-center mb-3">
+          <div class="col col-md-3 mb-2 mb-md-0">
+          <div class="rounded bg-secondary w-75 m-auto p-2">
+            <div class="check_position text-start mb-2">
+             <i class="fa-solid fa-check text-white"></i>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-cash-coin text-white" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+              <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+              <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+              <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+            </svg>
+            <p class="text-center text-white mt-3">বিশেষ কর্পোরেট মূল্য</p>
+          </div>
+          </div>
+          <div class="col col-md-3 mb-2 mb-md-0">
+          <div class="rounded bg-secondary w-75 m-auto p-2">
+            <div class="check_position text-start mb-2">
+              <i class="fa-solid fa-check text-white"></i>
+            </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-person-check text-white" viewBox="0 0 16 16">
+                  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                  <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                </svg>
+                <p class="text-center text-white mt-3">২৪ ঘন্টা সহযোগিতা</p> 
+            </div>
+          </div>
+          <div class="col col-md-3 mb-2 mb-md-0">
+          <div class="rounded bg-secondary w-75 m-auto p-2">
+            <div class="check_position text-start mb-2">
+              <i class="fa-solid fa-check text-white"></i>
+            </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-truck text-white" viewBox="0 0 16 16">
+                  <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg>
+                <p class="text-center text-white mt-3">বিনামূল্যে ডেলিভারি</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary w-50 w-md-25 text-center my-3 fs-4">আরো কিছু জানুন</a>
+      </div>
+    </div>
+  <!-- corporate section end -->
+
+ 
+
+  <!-- accordings faq's -->
+    <div class="container-fluid content_section bg-light" id="question">
+    <p class="h2 my-3 my-md-5 text-center">প্রায়-শ জিজ্ঞাসিত প্রশ্নসমুহ ?</p>
+      <div class="row justify-content-center py-2">
+        <div class="col col-md-7">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                কিভাবে অর্ডার করব ? #1
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body text-success">আপনি ছোট ৩টি ধাপ অনুসরণ করে অর্ডার সম্পন্ন করতে পারেবন</div>
+              <ol>
+                <li>প্রথমে আপনার যদি একাউন্ট না থাকে তাহলে আপনি একটি একাউন্ট তৈরি করে নিন।</li>
+                <li>আমাদের ওয়েবসাইট বা এপস থেকে আপনার পছন্দের প্রয়োজনীয় পণ্যসমুহ ব্যাগে রাখুন। বাছায়কৃত প্রয়োজনীয় পণ্যসমুহ আরেকবার দেখার জন্য মোবাইলের নিছে থাকা (ব্যাগ) -এর আইকনটিতে ক্লিক করে পণ্য বাছাই করুন। এর পর মোবইলের নিচে থাকা (অর্ডার করুন) বাটনে এ ক্লিক করুন।</li>
+                <li>আপনি যদি (লগ ইং) করা না থাকেন তাহলে লগ ইং করে নিন। তারপর আপনার ডেলিভারির তথ্য সঠিক ভাবে দিন। পেমেন্ট বাছাই করে নিন এবং ফাইনালি তথ্যগুলো সাবমিট করুন।</li>
+              </ol>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+               কিভাবে একাউন্ট খুলব ? #2
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body text-success">আপনি নিচে থাকা যেকোন একটি মাধ্যমে একাউন্ট তৈরি করতে পারবেন</div> 
+              <ol>
+                <li>গুগল</li>
+                <li>ফেসবুক</li>
+                <li>মোবাইল নাম্বার</li>
+                <li>নিজের মত করে নতুন একাউন্ট তৈরি করতে পারবেন</li> 
+              </ol>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                ডেলিভারি চার্জ কত টাকা ? #3
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body text-success">ডেলিভারি চার্জটি কিছু শর্তের উপর নির্ভরশীল</div>
+              <ol>
+                <li>স্বাভাবিক ডেলিভারি ৳৩৯ টাকা</li>
+                <li>৳৪০০ টাকার উপরে পণ্য ক্রয় করলে ডেলিভারি র্চাজ ৳২৯ টাকা</li>
+                <li>৳১০০০ টাকার উপরে পণ্য ক্রয় করলে ফ্রি ডেলিভারি</li></b>
+                <span class="text-bold text-secondary"> বি:দ্র: “মুদিমালামালের ক্ষেত্রে প্রযোজ্য”</span>
+              </ol>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseTwo">
+                 কিভাবে টাকা পরিশোধ করব ? #4
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body text-success">আপনি নিচের যেকোন দুটি মাধ্যমের একটি দিয়ে টাকা পরিশোধ করতে পারবেন</div> 
+              <ol>
+                <li>ক্যাশ অন ডেলিভারি (cod) <i class="fa-solid fa-check text-success"></i></li>
+                <li>অনলাইন পেমেন্ট (নগদ,বিকাশ ইত্যাদি)আপতত এটি নেই</li>
+              </ol>
+            </div> 
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseTwo">
+                 ১00 মিনিট ডেলিভারি কোথায় ? #5
+              </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body text-success">আমরা কক্সবাজার পৌরসভার সকল ওয়ার্ডের মধ্যে ১০০ মিনিট ডেলিভারি দিচ্ছি। </div> 
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  <!-- accordings faq's -->
+    <!-- footer strt-->
+<div class="container-fluid bg-light mb-5">
+  <footer class="pt-5">
+    <div class="row">
+      <div class="col col-md-6 mb-2 mb-md-0">
+        <div class="d-flex align-items-center border border-dark rounded p-2">
+            <div class="w-25 border-end border-2 text-primary my_border">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                        <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+                    </svg>
+            </div>
+            <div class="w-75 ps-4">
+              <h5>কল সমর্থন</h5>
+              <h6 class="text-primary">কল করুন ২৪/৭</h6>
+              <p class="text-danger">(+88)01872-040484</p>
+              <p>support.itthadi.com</p>
+            </div> 
+          </div>
+        </div>
+
+      <div class="col col-md-6">
+
+          <div class="d-flex align-items-center border border-dark rounded p-2">
+              <div class="w-25 border-end border-2 text-primary my_border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                  <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
+                  <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+                </svg>
+              </div>
+              <div class="w-75 ps-4">
+                <h5>দৈনিক হালনাগাত</h5>
+                <h6 class="text-primary">আমাদের সাবস্ক্রাইব করুন</h6>
+                <p>ইত্যাদি পরিবারের সাথে যোগ দিয়ে সাথে থাকুন</p>
+                <form action="" class="d-flex">
+                  <input type="text" placeholder="আপনার ইমেল এড্রেস দিন" class="form-control me-2">
+                  <button class="btn btn-primary">সেন্ট</button>
+                </form> 
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-6 col-md-2 order-md-1 order-2">
+        <h5 class="border-bottom pb-2 border-2">গ্রাহক সেবা</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">যোগাযোগ করুন</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">প্রশ্নমালা</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 order-md-2 order-3">
+        <h5 class="border-bottom pb-2 border-2">ইত্যাদি সম্পর্কে</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="https://itthadi.com/privacy" class="nav-link p-0 text-secondary">গোপনীয়তা নীতি</a></li>
+            <li class="nav-item mb-2"><a href="https://itthadi.com/terms" class="nav-link p-0 text-secondary">ব্যবহারের শর্তাবলী</a></li>
+          </ul>
+      </div>
+      <div class="col-6 col-md-2 order-md-3 order-4">
+        <h5 class="border-bottom pb-2 border-2">ব্যবসার জন্য</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">কর্পোরেট</a></li> 
+            </ul>
+      </div>
+      <div class="col-md-5 offset-md-1 border-start border-5 order-md-4 order-1 my_border">
+        <ul class="nav flex-column">
+          <li class="nav-item pb-2 justify-content-between mb-5">
+            <span class="text-secondary">পে করুন :</span>
+            <img src="#"alt="cod" class="rounded-pill">
+            <img src="#" alt="" class="rounded-pill">
+            <img src="#" alt="" class="rounded-pill">
+          </li>
+          <li class="nav-item pb-2 text-center">
+            <h5 class="text-secondary">প্রতিদিনের আপডেট এবং আর্কষনীয় অফার পেতে আপনার ফোন নাম্বার দিন</h5>
+          </li>
+          <li class="nav-item pb-2 justify-content-between py-2">
+            <form action="" class="d-flex">
+              <input type="text" placeholder="মোবাইল নাম্বার" class="form-control me-2">
+              <button class="btn bg-success text-white">সাবস্ক্রাইব</button>
+            </form>
+          </li>
+          <li class="nav-item d-flex pb-2 justify-content-between">
+            <img src="https://itthadi.com/uploads/frontendasset/logo_y_b.png" alt="" class="img-fluid logo">
+            <ul class="d-flex list-unstyled align-items-center">
+              <li class="ms-2 text-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                </svg>
+              </li>
+              <li class="ms-2 text-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                </svg>
+              </li>
+              <li class="ms-2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+              </li>
+            </ul>
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- copy right section-->
+    <div class="d-flex justify-content-center bg-dark py-3 text-center">
+      <span class="text-white">Copyright © 2024 M/S itthadi Traders. All Rights Reserved</span> 
+    </div>
+    <!-- copy right section-->
+  </footer>
+</div>
+<!-- footer end -->                </main>
+            </div>
+        </div> 
+    </div>
+    <script src="https://itthadi.com/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://itthadi.com/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://itthadi.com/assets/js/frontendCustom.js"></script>
+    <!-- Livewire Scripts -->
+<script src="/livewire/livewire.js?id=51f84ddf"   data-csrf="fvp6h9MJIaKCBipGk4IcxbaCVzw43MT3wpT6bojj" data-uri="/livewire/update" data-navigate-once="true"></script>
+    <script>
+     window.addEventListener('cardModal',event =>{
+        $('#cardModal').modal('hide');
+    }) 
+</script>
+</body>
+</html>
