@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>অনলাইনে বাজার সদায়</title>
+    <title>অনলাইনে বাজার সদায়
+</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -19,59 +20,50 @@
     <!-- Custom css -->
     <link rel="stylesheet" href="https://itthadi.com/assets/css/frontendCustom.css"> 
     <!-- Livewire Styles --><style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}[x-cloak] {display: none;}</style> 
-    <style>
-        header.header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: white; /* Or any other background color */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Add a shadow for better visibility */
-        }
-    </style>
-  </head>
+</head>
 <body>
     <div id="app"> 
         <!-- header -->
-        <header class="header w-100">
-            <!-- navbar -->
-            <nav>
-              <div class="container-fluid navbar bg-dark navbar-dark navbar-expand justify-content-between">
-                  <div class="d-flex ms-2">
-                    <button id="manu_btn" class="btn" type="button">
-                      <i class="fas fa-bars text-secondary"></i>
-                    </button>
-                    <a href="https://itthadi.com" class="navbar-brand home-logo ms-2"></a>
-                  </div>
-                  <form action="https://itthadi.com/search"  method="GET" class="d-flex w-50 search"> 
-                    <input name="query" type="text" value="" placeholder="পণ্য খুঁজুন (যেমন- ডিম, আলু, দুধ... )" class="form-control">
-                    <button type="submit" class="btn btn-success search_btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
-                  </form>
-                  <ul class="navbar-nav header-nav">
-                    <li class="nav-item nav-link"><div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;W26jpq2LhbM5ygD7excO&quot;,&quot;name&quot;:&quot;frontend.include.language-button&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;bn&quot;},&quot;checksum&quot;:&quot;720569e95ebfaef87f2a43dac2b26f78de821f300e655957f1600e1497546cfc&quot;}" wire:effects="[]" wire:id="W26jpq2LhbM5ygD7excO" wire:ignore.self>
-              <span wire:click="bangla_lang" class="badge text-bg-danger" role="button">বাং</span> | <span wire:click="english_lang" class="badge text-bg-dark" role="button">Eng</span>
-          </div>
-          </li>  
-                    <li class="nav-item"><a href="#question" class="nav-link">প্রশ্ন</a></li> 
-                    <li class="nav-item"><a href="#" class="nav-link">যোগাযোগ</a></li>
-                    <li class="nav-item">
-                                    <a href="https://itthadi.com/register" class="btn btn-success me-2">সাইন ইন</a>
-                    </li>
-                  </ul>
-                  <span class="mobile_dot btn me-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                    </svg>
-                  </span>
-              </div>
-            </nav>
-            <!-- navbar -->  
-          </header>
-          <!-- header --> 
+<header class="header w-100 ">
+  <!-- navbar -->
+  <nav class="">
+    <div class="container-fluid navbar fixed-top bg-dark navbar-dark navbar-expand justify-content-between">
+        <div class="d-flex ms-2">
+          <button id="manu_btn" class="btn" type="button">
+            <i class="fas fa-bars text-secondary"></i>
+          </button>
+          <a href="https://itthadi.com" class="navbar-brand home-logo ms-2"></a>
+        </div>
+        <form action="https://itthadi.com/search"  method="GET" class="d-flex w-50 search"> 
+          <input name="query" type="text" value="" placeholder="পণ্য খুঁজুন (যেমন- ডিম, আলু, দুধ... )" class="form-control">
+          <button type="submit" class="btn btn-success search_btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+          </button>
+        </form>
+        <ul class="navbar-nav header-nav">
+          <li class="nav-item nav-link"><div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;W26jpq2LhbM5ygD7excO&quot;,&quot;name&quot;:&quot;frontend.include.language-button&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;bn&quot;},&quot;checksum&quot;:&quot;720569e95ebfaef87f2a43dac2b26f78de821f300e655957f1600e1497546cfc&quot;}" wire:effects="[]" wire:id="W26jpq2LhbM5ygD7excO" wire:ignore.self>
+    <span wire:click="bangla_lang" class="badge text-bg-danger" role="button">বাং</span> | <span wire:click="english_lang" class="badge text-bg-dark" role="button">Eng</span>
+</div>
+</li>  
+          <li class="nav-item"><a href="#question" class="nav-link">প্রশ্ন</a></li> 
+          <li class="nav-item"><a href="#" class="nav-link">যোগাযোগ</a></li>
+          <li class="nav-item">
+                          <a href="https://itthadi.com/register" class="btn btn-success me-2">সাইন ইন</a>
+             
+             
+          </li>
+        </ul>
+        <span class="mobile_dot btn me-2 text-secondary"data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+          </svg>
+        </span>
+    </div>
+  </nav>
+    <!-- navbar -->  
+</header>
 <!-- header --> 
 <!-- mobile footer --> 
 <!-- see card  -->

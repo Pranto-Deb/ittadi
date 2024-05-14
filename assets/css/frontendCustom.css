@@ -319,6 +319,7 @@ div.card_position {
     }
     .header-nav {
         display: none;
+        position: fixed;
     }
     .mobile_dot {
         display: block;
